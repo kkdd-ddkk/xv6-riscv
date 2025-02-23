@@ -1,0 +1,26 @@
+name: Makefile CI
+
+on:
+  push:
+    branches: [ "riscv" ]
+  # pull_request:
+  #   branches: [ "riscv" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: colinaaa/setup-riscv-gnu-toolchain@latest
+      with:
+        release-date: 2020.08-1
+    - uses: actions/checkout@v4
+
+    - name: Make
+      run: make
+    
+    
+    # - name: configure
+      # run: ./configure
+
