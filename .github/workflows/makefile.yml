@@ -12,7 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: gregdavill/setup-riscv-gnu-toolchain@v2.0
+    # - uses: gregdavill/setup-riscv-gnu-toolchain@v2.0
+    - uses: colinaaa/setup-riscv-gnu-toolchain@v1.0.2
+      with:
+        # optional, see: https://toolchains.bootlin.com/releases_riscv64.html
+        release-date: 2020.08-1
     - uses: actions/checkout@v4
 
     - name: Make
