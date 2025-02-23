@@ -25,9 +25,10 @@ jobs:
 
 
     - name: Upload build artifacts
+      if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: build-artifacts # artifact name
+        name: xv6-riscv-build-artifacts # artifact name
         path: |
           **/*
 
